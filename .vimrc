@@ -54,6 +54,11 @@ hi Cursorline cterm=bold ctermbg=16
 hi CursorLineNr cterm=bold ctermbg=16 ctermfg=yellow
 hi StatusLine ctermbg=235
 hi WildMenu ctermbg=16 ctermfg=white
+highlight GitGutterAddLine ctermfg=none
+highlight GitGutterAddDefault cterm=bold
+highlight GitGutterDeleteLine ctermbg=16
+highlight GitGutterChangeLine ctermbg=16
+highlight GitGutterAddLine ctermbg=16
 "hi Normal ctermbg=none
 
 au FileType javascript set dictionary+=$HOME/.vim/dict/node.dict
@@ -64,13 +69,23 @@ if exists(":Tabularize")
 	vmap <Leader>a: :Tabularize /:\zs<CR>
 endif
 
+
+let g:gitgutter_highlight_lines = 1 
+let g:gitgutter_realtime = 0
+let g:gitgutter_eager = 0
+set cursorline
+let g:indent_guides_start_level=2
+let g:indent_guides_guide_size=1
+
 " -------- PLUGINS
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
+Plugin 'airblade/vim-gitgutter'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'tpope/vim-fugitive'
 Plugin 'taglist.vim'
 
 call vundle#end()            " required
