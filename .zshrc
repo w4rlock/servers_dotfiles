@@ -53,7 +53,7 @@ export UPDATE_ZSH_DAYS=13
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git, colorize)
 
 # User configuration
 
@@ -91,7 +91,16 @@ source ~/.nvm/nvm.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias ls='ls++'
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
+export PS1=' %2~ %B»%b '
+
+alias ls='ls++'
+alias ftpPushCreatChaos='ncftpput -R -v -P 2121  -u cchaos -p L_*1k8Jk 50.22.18.22 /opt/sites/creativechaos.shoshkey.com'
+
+
+if [ -z "$SSH_AUTH_SOCK" ] ; then
+	  eval `ssh-agent -s`
+		ssh-add
+fi
 

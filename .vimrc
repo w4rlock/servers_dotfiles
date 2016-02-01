@@ -22,6 +22,7 @@ set statusline=%f\ %y\ %m%r%h%w
 set statusline+=%=                         
 set statusline+=[L:\ %l/%L]\ [C:\ %v]\ [%p%%] 
 set nocompatible
+set cursorline
 
 map <silent> tl :tabnext<CR>
 map <silent> th :tabprev<CR>
@@ -73,9 +74,10 @@ endif
 let g:gitgutter_highlight_lines = 1 
 let g:gitgutter_realtime = 0
 let g:gitgutter_eager = 0
-set cursorline
 let g:indent_guides_start_level=2
 let g:indent_guides_guide_size=1
+
+nmap s <Plug>(easymotion-s)
 
 " -------- PLUGINS
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -87,6 +89,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-fugitive'
 Plugin 'taglist.vim'
+Plugin 'easymotion/vim-easymotion'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
