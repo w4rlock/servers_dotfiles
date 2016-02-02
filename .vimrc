@@ -108,6 +108,7 @@ Plugin 'Tabular'
 Plugin 'ervandew/supertab'
 
 Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
