@@ -72,6 +72,10 @@ let g:gitgutter_eager = 0
 let g:indent_guides_start_level=2
 let g:indent_guides_guide_size=1
 
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+let g:UltiSnipsEditSplit="vertical"
 
 
 map <Leader> <Plug>(easymotion-prefix)
@@ -103,11 +107,7 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'Tabular'
 Plugin 'ervandew/supertab'
 
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
-
+Plugin 'SirVer/ultisnips'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
-
