@@ -6,6 +6,7 @@ set number
 set wildmenu
 set foldenable  
 set foldmethod=indent 
+set cursorline
 
 set shiftwidth=2
 set tabstop=2   
@@ -22,7 +23,6 @@ set statusline=%f\ %y\ %m%r%h%w
 set statusline+=%=                         
 set statusline+=[L:\ %l/%L]\ [C:\ %v]\ [%p%%] 
 set nocompatible
-set cursorline
 
 map <silent> tl :tabnext<CR>
 map <silent> th :tabprev<CR>
@@ -42,6 +42,7 @@ vnoremap < <gv
 vnoremap > >gv
 
 nnoremap <silent> <F8> :NERDTreeToggle<CR>
+map <F7> mzgg=G`z
 
 set pastetoggle=<F2>
 let mapleader = ","
@@ -55,20 +56,14 @@ hi Cursorline cterm=bold ctermbg=16
 hi CursorLineNr cterm=bold ctermbg=16 ctermfg=yellow
 hi StatusLine ctermbg=235
 hi WildMenu ctermbg=16 ctermfg=white
-highlight GitGutterAddLine ctermfg=none
-highlight GitGutterAddDefault cterm=bold
-highlight GitGutterDeleteLine ctermbg=16
-highlight GitGutterChangeLine ctermbg=16
-highlight GitGutterAddLine ctermbg=16
-"hi Normal ctermbg=none
+hi GitGutterAddLine ctermfg=none
+hi GitGutterAddDefault cterm=bold
+hi GitGutterDeleteLine ctermbg=16
+hi GitGutterChangeLine ctermbg=17
+hi GitGutterAddLine ctermbg=16
+hi Normal ctermbg=none
 
 au FileType javascript set dictionary+=$HOME/.vim/dict/node.dict
-if exists(":Tabularize")
-	nmap <Leader>a= :Tabularize /=<CR>
-	vmap <Leader>a= :Tabularize /=<CR>
-  nmap <Leader>a: :Tabularize /:\zs<CR>
-	vmap <Leader>a: :Tabularize /:\zs<CR>
-endif
 
 
 let g:gitgutter_highlight_lines = 1 
@@ -77,7 +72,18 @@ let g:gitgutter_eager = 0
 let g:indent_guides_start_level=2
 let g:indent_guides_guide_size=1
 
-nmap s <Plug>(easymotion-s)
+
+
+map <Leader> <Plug>(easymotion-prefix)
+nmap s <Plug>(easymotion-s2)
+nmap t <Plug>(easymotion-t2)
+
+map  / <Plug>(easymotion-sn)
+omap / <Plug>(easymotion-tn)
+
+map  n <Plug>(easymotion-next)
+map  N <Plug>(easymotion-prev)
+
 
 " -------- PLUGINS
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -85,11 +91,22 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'airblade/vim-gitgutter'
 Plugin 'scrooloose/nerdcommenter'
+
+Plugin 'airblade/vim-gitgutter'
 Plugin 'tpope/vim-fugitive'
+
 Plugin 'taglist.vim'
 Plugin 'easymotion/vim-easymotion'
+
+
+Plugin 'Tabular'
+Plugin 'ervandew/supertab'
+
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+
 
 call vundle#end()            " required
 filetype plugin indent on    " required
