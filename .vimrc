@@ -59,7 +59,7 @@ hi WildMenu ctermbg=16 ctermfg=white
 hi GitGutterAddLine ctermfg=none
 hi GitGutterAddDefault cterm=bold
 hi GitGutterDeleteLine ctermbg=16
-hi GitGutterChangeLine ctermbg=17
+hi GitGutterChangeLine ctermbg=233
 hi GitGutterAddLine ctermbg=16
 hi Normal ctermbg=none
 
@@ -112,3 +112,11 @@ Plugin 'honza/vim-snippets'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+
+"NMAP
+",b search up
+",w search down
+",s search char
+"s search 2 chars
+
