@@ -15,6 +15,9 @@ sudo apt-get install -y \
 	fontconfig
 
 
+sudo mkdir -p /server/{nodejs,php,iojs}
+
+
 cd /tmp
 git clone git://github.com/trapd00r/ls--.git
 git clone https://github.com/w4rlock/servers_dotfiles.git
