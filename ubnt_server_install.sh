@@ -8,10 +8,10 @@ sudo apt-get install -y \
 	ctags \
 	htop \
 	nginx \
-	convert \
 	tmux \
 	zsh  \
 	vim \
+	convert \
 	fontconfig
 
 
@@ -20,7 +20,7 @@ git clone git://github.com/trapd00r/ls--.git
 git clone https://github.com/w4rlock/servers_dotfiles.git
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
-cp servers_dotfiles/.* ~/
+cp -r servers_dotfiles/.* ~/
 sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.30.2/install.sh | bash
 
@@ -32,6 +32,8 @@ perl Makefile.PL
 make 
 sudo make install
 
+source $HOME/.zshrc
+nvm install v.5.6.0
 
 
 #node js tools
